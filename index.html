@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTMLタグ学習ページ</title>
+        <link rel="stylesheet" href="/style.css" />
+        <style></style>
+    </head>
+    <body class="learn-html-page">
+        <header class="page-header">
+            <h1 class="page-title">HTMLタグを学ぼう！</h1>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#intro" class="nav-link">はじめに</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#text" class="nav-link">テキスト関連</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#list" class="nav-link">リスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#table" class="nav-link">テーブル</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="intro" class="content-section intro-section">
+                <h2 class="section-title">はじめに</h2>
+                <p class="section-text">
+                    このページは、HTMLの基本的なタグを学ぶためのサンプルです。各タグの役割を考えながら見てみましょう。
+                </p>
+            </section>
+
+            <section id="text" class="content-section text-section">
+                <h2 class="section-title">テキスト関連のタグ</h2>
+                <p class="section-text">
+                    これは段落を表す<code class="html-tag">&lt;p&gt;</code
+                    >タグです。
+                </p>
+                <p class="section-text">
+                    文章の中で<strong class="strong-text">強調したい部分</strong
+                    >には<code class="html-tag">&lt;strong&gt;</code
+                    >タグを使います。
+                </p>
+                <p class="section-text">
+                    <em class="emphasis-text">イタリック体</em
+                    >にしたい場合は<code class="html-tag">&lt;em&gt;</code
+                    >タグを使用します。
+                </p>
+            </section>
+
+            <section id="list" class="content-section list-section">
+                <h2 class="section-title">リスト</h2>
+                <h3 class="subsection-title">順序なしリスト</h3>
+                <ul class="unordered-list">
+                    <li class="list-item">リンゴ</li>
+                    <li class="list-item">バナナ</li>
+                    <li class="list-item">オレンジ</li>
+                </ul>
+                <h3 class="subsection-title">順序付きリスト</h3>
+                <ol class="ordered-list">
+                    <li class="list-item">最初の項目</li>
+                    <li class="list-item">2番目の項目</li>
+                    <li class="list-item">3番目の項目</li>
+                </ol>
+            </section>
+
+            <section id="table" class="content-section table-section">
+                <h2 class="section-title">テーブル</h2>
+                <table class="sample-table">
+                    <thead class="table-header">
+                        <tr>
+                            <th class="table-heading">列1</th>
+                            <th class="table-heading">列2</th>
+                            <th class="table-heading">列3</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-cell">行1, 列1</td>
+                            <td class="table-cell">行1, 列2</td>
+                            <td class="table-cell">行1, 列3</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-cell">行2, 列1</td>
+                            <td class="table-cell">行2, 列2</td>
+                            <td class="table-cell">行2, 列3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <p class="copyright">&copy; 2024 HTMLタグ学習ページ</p>
+        </footer>
+    </body>
+</html>
