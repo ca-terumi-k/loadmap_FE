@@ -37,6 +37,7 @@ export default async function API() {
         let data: Post[] = [];
         const response = await fetch("http://localhost:3000/api/post");
         data = await response.json();
+        console.log(data[0].title);
         // dataから5つのデータを取得
         const slicedData = data.slice(0, 5);
         return slicedData;
