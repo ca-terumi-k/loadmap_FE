@@ -7,7 +7,7 @@ type ListProps = {
 
 export default function List({ cards }: ListProps) {
     return (
-        <div className="bg-gray-100 py-8">
+        <div className="bg-gray-100 py-8 w-full">
             <div className="max-w-md mx-auto">
                 <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                     Todo List

@@ -3,7 +3,6 @@ import React from "react";
 type CardProps = {
     text: string;
 };
-
 export default function Card({ text }: CardProps) {
     return (
         <div className="bg-white shadow-sm rounded-lg p-4 mb-2 hover:shadow-md transition-shadow duration-200">

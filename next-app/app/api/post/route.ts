@@ -7,6 +7,7 @@ type Post = {
     userId: number;
 };
 
+// .nextのフォルダーを消さないとdevモードでsampleデータの更新ができない
 const posts: Post[] = [
     {
         id: 1,
