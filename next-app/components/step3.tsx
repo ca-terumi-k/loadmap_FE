@@ -3,28 +3,11 @@
 //  - 外部APIからデータを取得
 //  - useEffectフックの使用
 //  - ローディング状態の管理(skeleton loader)
-// https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming
 
-// https://jsonplaceholder.typicode.com/posts
-// このAPIを使って、データを取得して表示するコンポーネントを作成してください。
+// app/api/post/route.tsを生成し、そこにデータを取得するAPIを作成してください。
 
-// このAPIは、以下のようなデータを返します。
-// {
-//   id: 1,
-//   title: '...',
-//   body: '...',
-//   userId: 1
-// }
 
-// [
-//   { id: 1, title: '...' /* ... */ },
-//   { id: 2, title: '...' /* ... */ },
-//   { id: 3, title: '...' /* ... */ },
-//   /* ... */
-//   { id: 100, title: '...' /* ... */ },
-// ];
-
-import React, { Suspense } from "react";
+import React from "react";
 import { PostGrid, Post } from "@/components/step3/post";
 import PostCard from "@/components/step3/clientAPI";
 
@@ -42,10 +25,16 @@ export default async function API() {
     const data = await getFunc();
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <PostGrid posts={data} />
-            <hr className="my-4" />
-            <PostCard />
-        </div>
+        <>
+            <div className="mx-auto px-4 py-8">
+                <h2>SSR</h2>
+                <PostGrid posts={data} />
+                <hr className="my-4" />
+                <h2>CSR</h2>
+                <div className="min-h-[200px]">
+                    <PostCard />
+                </div>
+            </div>
+        </>
     );
 }
