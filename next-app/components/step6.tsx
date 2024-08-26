@@ -12,18 +12,18 @@ const SSR_SSG_CSR = async () => {
             </h1>
             <div className="flex flex-col space-y-6">
                 <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
-                    <h2 className="text-xl font-semibold mb-4">SSR</h2>
-                    <div className="text-sm text-gray-500 mb-2">
-                        リアルタイムのデータ取得
-                    </div>
-                    <SSR />
-                </div>
-                <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
                     <h2 className="text-xl font-semibold mb-4">SSG</h2>
                     <div className="text-sm text-gray-500 mb-2">
                         ビルド時に静的に生成
                     </div>
                     <SSG />
+                </div>
+                <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+                    <h2 className="text-xl font-semibold mb-4">SSR</h2>
+                    <div className="text-sm text-gray-500 mb-2">
+                        リアルタイムのデータ取得
+                    </div>
+                    <SSR />
                 </div>
                 <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
                     <h2 className="text-xl font-semibold mb-4">CSR</h2>

@@ -22,6 +22,11 @@ const getDecryptedCookie = (key: string): string => {
     return "";
 };
 
+// 複数のCookieを一度に削除する関数
+const removeCookies = (keys: string[]) => {
+    keys.forEach((key) => Cookies.remove(key));
+};
+
 // 初期状態
 const initialState: FormState = {
     name: getDecryptedCookie("name") || "",
@@ -34,6 +39,9 @@ const formSlice = createSlice({
     name: "form",
     initialState,
     reducers: {
+        // アクションとリデューサーの定義
+
+        // Name をセットするアクション
         setName: (state, action: PayloadAction<string>) => {
             state.name = action.payload;
             if (state.useCookies) {
@@ -47,6 +55,8 @@ const formSlice = createSlice({
                 });
             }
         },
+
+        // Email をセットするアクション
         setEmail: (state, action: PayloadAction<string>) => {
             state.email = action.payload;
             if (state.useCookies) {
@@ -60,6 +70,8 @@ const formSlice = createSlice({
                 });
             }
         },
+
+        // Cookieの利用をセットするアクション
         setUseCookies: (state, action: PayloadAction<boolean>) => {
             state.useCookies = action.payload;
             Cookies.set("useCookies", String(action.payload), {
@@ -67,31 +79,34 @@ const formSlice = createSlice({
                 sameSite: "strict",
             });
             if (!action.payload) {
-                // Cookie利用が無効になった場合、Cookieを削除する
-                Cookies.remove("name");
-                Cookies.remove("email");
-                Cookies.remove("useCookies");
+                // Cookie利用が無効になった場合、関連するCookieを削除する
+                removeCookies(["name", "email", "useCookies"]);
             }
         },
+
+        // フォームをリセットするアクション
         resetForm: (state) => {
             state.name = "";
             state.email = "";
             // Cookieを削除する
-            Cookies.remove("name");
-            Cookies.remove("email");
+            removeCookies(["name", "email"]);
         },
+
+        // Cookieの利用をキャンセルするアクション
         cancelCookies: (state) => {
             state.useCookies = false;
-            Cookies.remove("name");
-            Cookies.remove("email");
-            Cookies.remove("useCookies");
+            removeCookies(["name", "email", "useCookies"]);
         },
+
+        // Cookieからフォームをロードするアクション
         loadFormFromCookies: (state) => {
             if (state.useCookies) {
                 state.name = getDecryptedCookie("name") ?? state.name;
                 state.email = getDecryptedCookie("email") ?? state.email;
             }
         },
+
+        // フォームの内容をコンソールに出力するアクション (デバッグ用)
         outForm: (state) => {
             // console.log({
             //     name: state.name,

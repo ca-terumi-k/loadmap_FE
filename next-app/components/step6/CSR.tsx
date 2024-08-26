@@ -3,25 +3,27 @@
 import React, { useEffect, useState } from "react";
 
 const CSR = () => {
-    const [data, setData] = useState<string | null>(null);
-    const [timestamp, setTimestamp] = useState<string>("");
+    const [startTime, setStartTime] = useState<string>("");
+    const [endTime, setEndTime] = useState<string>("");
 
     useEffect(() => {
-        const currentTimestamp = new Date().toISOString();
-        setTimestamp(currentTimestamp);
+        const start = new Date();
+        const end = new Date();
 
-        fetchDataForCSR().then(setData);
+        setStartTime(start.toISOString());
+        setEndTime(end.toISOString());
+
+        // 差分を表示
+        console.log(`CSR: ${end.getTime() - start.getTime()}ms`);
     }, []);
 
     return (
         <div className="p-4 bg-gray-100 rounded-md">
-            <p className="text-lg font-semibold">Generated at: {timestamp}</p>
+            <p className="text-lg font-semibold">StartTime at: {startTime}</p>
+            <hr />
+            <p className="text-lg font-semibold">EndTime at: {endTime}</p>
         </div>
     );
 };
-
-async function fetchDataForCSR() {
-    return "CSR Data";
-}
 
 export default CSR;
