@@ -41,12 +41,6 @@ const steps = [
         key: "group1",
         items: [
             {
-                title: "Step 7: 状態管理ライブラリ",
-                description: "状態管理ライブラリの基本",
-                component: <Context />,
-                className: "md:row-span-1",
-            },
-            {
                 title: "Step 1: Counter",
                 description: "シンプルなカウンター",
                 component: <Counter />,
@@ -57,6 +51,12 @@ const steps = [
                 description: "見かけだけのTodoリスト",
                 component: <Todo />,
                 className: "md:row-span-2",
+            },
+            {
+                title: "Step 7: 状態管理ライブラリ",
+                description: "状態管理ライブラリの基本",
+                component: <Context />,
+                className: "md:row-span-1",
             },
         ],
     },

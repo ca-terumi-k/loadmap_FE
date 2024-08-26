@@ -7,6 +7,7 @@ import {
     setEmail,
     resetForm,
     outForm,
+    cancelCookies,
 } from "@/app/stateStore";
 
 const Context = () => {
@@ -26,6 +27,11 @@ const Context = () => {
 
     const handleReset = () => {
         dispatch(resetForm());
+    };
+
+    const handleCancelCookies = () => {
+        dispatch(cancelCookies());
+        dispatch(outForm());
     };
 
     return (
@@ -50,13 +56,22 @@ const Context = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
                     />
                 </div>
-                <button
-                    type="button"
-                    onClick={handleReset}
-                    className="w-full bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-700"
-                >
-                    Reset
-                </button>
+                <div className="flex justify-between">
+                    <button
+                        type="button"
+                        onClick={handleReset}
+                        className="w-full bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-700"
+                    >
+                        Reset
+                    </button>
+                    <button
+                        type="button"
+                        onClick={handleCancelCookies}
+                        className="w-full bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-700"
+                    >
+                        Cookieを削除
+                    </button>
+                </div>
             </form>
         </div>
     );

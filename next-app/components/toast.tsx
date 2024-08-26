@@ -7,8 +7,9 @@ const Toast = () => {
     const [showToast, setShowToast] = useState(false);
     const useCookies = useSelector((state: RootState) => state.form.useCookies);
     const dispatch = useDispatch();
+
     useEffect(() => {
-        // useCookiesが無効になっている場合にトーストを表示
+        // ページロード時に初期値がfalseの場合にトーストを表示
         if (!useCookies) {
             setShowToast(true);
         }
@@ -22,13 +23,15 @@ const Toast = () => {
     const handleDecline = () => {
         setShowToast(false);
     };
+
     return (
         <>
             {showToast && (
                 <div className="fixed bottom-4 right-4 bg-gray-800 text-white p-4 rounded-lg shadow-lg flex items-center space-x-4">
                     <p>
                         当サイトではクッキーを使用してエクスペリエンスを向上させています。承諾いただけますか?
-                        リロードしてもFormの値は保持されます。
+                        <br />
+                        有効化していただくとリロードしてもFormの値が保持されます。
                     </p>
                     <button
                         onClick={handleAccept}

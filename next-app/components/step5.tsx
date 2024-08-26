@@ -50,11 +50,7 @@ export default function Auth() {
             <div className="p-8 bg-white rounded-lg shadow-md">
                 {isLoggedIn && user ? (
                     <div className="flex flex-col items-center">
-                        <div>
-                            <p className="mb-4">
-                                こんにちは、{user.displayName}
-                            </p>
-                        </div>
+                        <p className="mb-4">こんにちは、{user.displayName}</p>
                         <div className="flex flex-row items-center space-x-4">
                             {/* ログインしたユーザーのアイコンを表示 */}
                             {user.photoURL ? (
@@ -81,10 +77,8 @@ export default function Auth() {
                     </div>
                 ) : (
                     <div className="flex flex-row items-center space-x-4">
-                        <div>
-                            <p className="mb-4">こんにちは、ログインして</p>
-                        </div>
-                        <div className="flex flex-row items-center space-x-4">
+                        <p className="">こんにちは、ログインしてね</p>
+                        <div className="flex flex-row items-center space-x-4 border-2 border-blue-500 rounded-md p-2">
                             <FaGoogle size={24} className="text-blue-500" />
                             <button
                                 onClick={handleLogin}
