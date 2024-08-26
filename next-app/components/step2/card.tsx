@@ -5,7 +5,7 @@ type CardProps = {
 };
 export default function Card({ text }: CardProps) {
     return (
-        <div className="bg-white shadow-sm rounded-lg p-4 mb-2 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white rounded-lg p-4 hover:shadow-md transition-shadow duration-200 my-2">
             <div className="flex items-center justify-between">
                 <div className="flex-grow text-gray-700 cursor-move">
                     {text}

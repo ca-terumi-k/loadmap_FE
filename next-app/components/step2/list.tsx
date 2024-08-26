@@ -12,7 +12,7 @@ export default function List({ cards }: ListProps) {
                 <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                     Todo List
                 </h1>
-                <div className="bg-white shadow-md rounded-lg overflow-hidden">
+                <div className="bg-white rounded-lg overflow-hidden">
                     {cards.map((card: string, index: number) => (
                         <Card key={index} text={card} />
                     ))}

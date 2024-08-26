@@ -15,7 +15,9 @@ export default async function API() {
     const getFunc = async () => {
         "use server";
         let data: Post[] = [];
-        const response = await fetch("http://localhost:3000/api/post");
+        const response = await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/post`
+        );
         data = await response.json();
         // dataから5つのデータを取得
         const slicedData = data.slice(0, 5);
