@@ -3,9 +3,7 @@ import { cache } from "react";
 // Cached data fetching function
 const getTimestamp = cache(async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/date`, {
-            // next: { revalidate: 100 },
-        });
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/date"`);
         if (!res.ok) throw new Error("Failed to fetch timestamp");
         return res.json();
     } catch (error) {
