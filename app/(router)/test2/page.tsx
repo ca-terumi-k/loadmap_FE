@@ -1,10 +1,5 @@
 import React from "react";
 import Counter from "@/components/step1";
-import Todo from "@/components/step2";
-import API from "@/components/step3";
-import Navigation from "@/components/step4";
-import Auth from "@/components/step5";
-import SSR_SSG_CSR from "@/components/step6";
 
 // カードコンポーネント
 const Card = ({
@@ -40,57 +35,10 @@ const steps = [
         key: "group1",
         items: [
             {
-                title: "Step 1: Counter",
-                description: "シンプルなカウンター",
-                component: <div className="min-h-[150px]"></div>,
-                className: "md:row-span-1",
-            },
-            {
-                title: "Step 2: Todo List",
-                description: "見かけだけのTodoリスト",
-                component: <div className="min-h-[200px]"></div>,
-                className: "md:row-span-2",
-            },
-            {
-                title: "Step 4: ルーティング",
-                description: "ルーティングの基本",
-                component: <Navigation />,
-                className: "md:row-span-1",
-            },
-        ],
-    },
-    {
-        key: "group2",
-        items: [
-            {
-                title: "Step 3: APIを使ってデータを取得",
-                description: "APIを受信、送信に関する基本",
-                component: <div className="min-h-[550px]"></div>,
-                className: "md:row-span-2",
-            },
-            {
-                title: "Step 7: 状態管理ライブラリ",
-                description: "状態管理ライブラリの基本",
-                component: <div className="min-h-[150px]"></div>,
-                className: "md:row-span-1",
-            },
-        ],
-    },
-    {
-        key: "group3",
-        items: [
-            {
-                title: "Step 5: 認証",
-                description: "認証の基本",
-                component: <div className="min-h-[175px]"></div>,
-                className: "md:row-span-1",
-            },
-            {
-                title: "Step 6: SSRとSSG",
-                description:
-                    "サーバーサイドレンダリングとスタティックサイトジェネレーションの基本",
-                component: <div className="min-h-[500px]"></div>,
-                className: "md:row-span-1",
+                title: "Step1",
+                description: "Counter",
+                component: <Counter />,
+                className: "h-80",
             },
         ],
     },
