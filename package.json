@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "rm -rf .next node_modules && npm install && next dev",
+        "dev": "rm -rf .next && npm install && next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint"

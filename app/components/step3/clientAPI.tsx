@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, use } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { PostGrid, Post } from "@/app/components/step3/post";
 
 const Loading = () => (
@@ -10,11 +10,7 @@ const Loading = () => (
 
 // データフェッチを行う関数
 const fetchPosts = async (): Promise<Post[]> => {
-    const res = await fetch(
-        `${
-            process.env.NEXT_PUBLIC_BASE_URL || "http://127.0.0.1:3000"
-        }/api/post`
-    );
+    const res = await fetch(`/api/post`, { method: "GET" });
     if (!res.ok) {
         throw new Error("Network response was not ok");
     }
@@ -23,20 +19,25 @@ const fetchPosts = async (): Promise<Post[]> => {
     return data;
 };
 
-// Promise をキャッシュするための変数
-let postsPromise: Promise<Post[]> | null = null;
-
-// データを取得するためのカスタムフック
-function usePosts() {
-    if (!postsPromise) {
-        postsPromise = fetchPosts();
-    }
-    return use(postsPromise);
-}
-
 // Suspenseで使用するコンポーネント
 function PostsContent() {
-    const posts = usePosts();
+    const [posts, setPosts] = useState<Post[] | null>(null);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        fetchPosts()
+            .then((data) => setPosts(data))
+            .catch((err) => setError(err.message));
+    }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!posts) {
+        return <Loading />;
+    }
+
     return <PostGrid posts={posts} />;
 }
 
@@ -47,3 +48,4 @@ export default function PostCard() {
         </Suspense>
     );
 }
+

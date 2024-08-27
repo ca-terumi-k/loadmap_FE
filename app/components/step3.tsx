@@ -3,9 +3,6 @@
 //  - 外部APIからデータを取得
 //  - useEffectフックの使用
 //  - ローディング状態の管理(skeleton loader)
-
-// app/api/post/route.tsを生成し、そこにデータを取得するAPIを作成してください。
-
 import React from "react";
 import { PostGrid, Post } from "@/app/components/step3/post";
 import PostCard from "@/app/components/step3/clientAPI";
@@ -14,12 +11,11 @@ export default async function API() {
     const getFunc = async () => {
         ("use server");
         let data: Post[] = [];
-        // 相対パスを使用
-        const response = await fetch(
-            `${
-                process.env.NEXT_PUBLIC_VERCEL_URL || "http://127.0.0.1:3000"
-            }/api/post`
-        );
+
+        // 絶対パスを使用
+        const response = await fetch(`${process.env.VERCEL_URL}/api/post`, {
+            method: "GET",
+        });
         data = await response.json();
         // dataから5つのデータを取得
         const slicedData = data.slice(0, 5);
