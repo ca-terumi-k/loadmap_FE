@@ -77,7 +77,11 @@ export default function Auth() {
                     </div>
                 ) : (
                     <div className="flex flex-row items-center space-x-4">
-                        <p className="">こんにちは、ログインしてね</p>
+                        <p className="">
+                            こんにちは、
+                            <br />
+                            ログインしてね
+                        </p>
                         <div className="flex flex-row items-center space-x-4 border-2 border-blue-500 rounded-md p-2">
                             <FaGoogle size={24} className="text-blue-500" />
                             <button

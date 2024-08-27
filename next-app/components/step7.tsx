@@ -17,7 +17,7 @@ const Context = () => {
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setName(e.target.value));
-        dispatch(outForm());
+        dispatch(outForm()); // デバック用
     };
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +31,7 @@ const Context = () => {
 
     const handleCancelCookies = () => {
         dispatch(cancelCookies());
-        dispatch(outForm());
+        dispatch(outForm()); // デバック用
     };
 
     return (
@@ -60,14 +60,14 @@ const Context = () => {
                     <button
                         type="button"
                         onClick={handleReset}
-                        className="w-full bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-700"
+                        className="w-2/5 bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-700"
                     >
                         Reset
                     </button>
                     <button
                         type="button"
                         onClick={handleCancelCookies}
-                        className="w-full bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-700"
+                        className="w-3/5 bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-700"
                     >
                         Cookieを削除
                     </button>

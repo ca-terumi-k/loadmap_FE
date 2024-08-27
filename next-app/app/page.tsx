@@ -67,7 +67,7 @@ const steps = [
                 title: "Step 4: ルーティング",
                 description: "ルーティングの基本",
                 component: <Navigation />,
-                className: "md:row-span-1",
+                className: "md:row-span-1 ms:row-span-1",
             },
 
             {

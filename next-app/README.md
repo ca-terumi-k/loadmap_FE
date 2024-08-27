@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js + React 学習用記事の概要
 
-## Getting Started
+この講座では、Next.jsプロジェクトを通じて、Reactの基本からNext.jsの仕様を学ぶことができます。TypeScriptを使用し、Next.js v14以降のApp Routerを活用しながら、モダンなウェブアプリケーション開発の基礎を身につけましょう。
 
-First, run the development server:
+## 学習内容
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+この講座では、以下の内容を学習します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **コンポーネント作成と状態管理**: シンプルなカウンターの作成を通して、Reactコンポーネントの基礎や`useState`フックによる状態管理、イベント処理の方法を学びます。
+- **APIとの連携**: APIとの通信を行い、データの取得や作成、`useEffect`フックの使用、ローディング状態の管理を学びます。Next.jsのAPIルーティングも体験します。
+- **ルーティングの実装**: 複数ページの作成や動的ルーティングを学び、Next.jsを使用したページ間の移動方法を習得します。
+- **ユーザー認証 (Firebase)**: 認証機能を実装し、ユーザーの登録やログイン、保護されたルートの作成方法を学びます。
+- **SSRとSSG**: サーバーサイドレンダリング（SSR）とスタティックサイトジェネレーション（SSG）の違いを理解し、実装方法を学びます。
+- **状態管理ライブラリの導入**: ReduxやReact Contextを導入し、グローバル状態の管理方法を習得します。複数のコンポーネント間で一貫性のある状態管理を実現しましょう。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 実装手順の例
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Step 1: シンプルなカウンター
 
-## Learn More
+まずはカウンターコンポーネントを作成し、Reactの基本を学びます。
 
-To learn more about Next.js, take a look at the following resources:
+- コンポーネントの基本構造
+- `useState`フックによる状態管理
+- `onClick`イベントハンドラの追加
+- Tailwind CSSによるデザインの適用
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Step 2: TODOリスト
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+再利用可能なコンポーネント設計を学び、TODOリストを実装します。
 
-## Deploy on Vercel
+### Step 3: APIとの連携
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.jsのAPIルーティングを使用して、外部APIからデータを取得し、表示する手順を学びます。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. APIを作成する
+2. 作成したAPIからデータを取得したものをcard状に出力する`post`コンポーネントを定義する
+3. CSRを行うための`clientAPI.tsx`を作成する
+4. Step3のコンポーネントを作成し`page.tsx`の`step`配列に追加
+
+### Step 4: ルーティング
+
+Next.jsで複数ページの作成、ページ間の遷移、そして動的ルーティングを学びます。また、`next/link`コンポーネントを使ったページ移動方法も習得します。
+
+### Step 5: 認証
+
+認証機能を実装し、ユーザーの登録やログイン処理を学びます。また、認証されたユーザーのみがアクセスできる保護されたルートを作成します。
+
+### Step 6: サーバーサイドレンダリング（SSR）とスタティックサイトジェネレーション（SSG）
+
+Server Side Rendering (SSR) と Static Site Generation (SSG) を理解し、それぞれを実装する方法を学びます。また、サーバーサイドでの処理とクライアントサイドとの違いを理解します。
+
+### Step 7: 状態管理ライブラリ
+
+状態管理ライブラリを導入し、グローバル状態の管理を学びます。ReduxまたはReact Contextのいずれかを使用します。複数のコンポーネント間で状態を共有し、一貫性を保つための技術を習得します。
+
+この講座を通して、Next.jsとReactを用いたモダンなウェブアプリケーションの開発に必要なスキルを身につけることができます。

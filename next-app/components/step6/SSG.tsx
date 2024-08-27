@@ -20,9 +20,15 @@ export default async function SSG() {
 
     return (
         <div className="p-4 bg-gray-100 rounded-md">
-            <p className="text-lg font-semibold">StartTime at: {timeNow}</p>
+            <p className="text-sm font-semibold">
+                StartTime at: <br />
+                <span className="text-lg">{timeNow}</span>
+            </p>
             <hr />
-            <p className="text-lg font-semibold">buildTime at: {timestamp}</p>
+            <p className="text-sm font-semibold">
+                buildTime at: <br />
+                <span className="text-lg">{timestamp}</span>
+            </p>
         </div>
     );
 }

@@ -4,12 +4,10 @@
 import React from "react";
 import List from "@/components/step2/list";
 
-const sample_cards = ["task1", "task2", "task3"];
-
 export default function Todo() {
     return (
         <>
-            <List cards={sample_cards} />
+            <List />
         </>
     );
 }

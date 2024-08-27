@@ -1,11 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Card from "@/components/step2/card";
 
 type ListProps = {
-    cards: string[];
+    initialCards?: string[]; // initialCardsをオプショナルにする
 };
 
-export default function List({ cards }: ListProps) {
+export default function List({
+    initialCards = ["task1", "task2", "task3"],
+}: ListProps) {
+    const [cards, setCards] = useState(initialCards);
+
+    const addCard = () => {
+        const newCard = "New Task"; // 新しいタスクのデフォルト文字列
+        setCards([...cards, newCard]);
+    };
+
     return (
         <div className="bg-gray-100 py-8 w-full">
             <div className="max-w-md mx-auto">
@@ -17,7 +27,10 @@ export default function List({ cards }: ListProps) {
                         <Card key={index} text={card} />
                     ))}
                 </div>
-                <button className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200">
+                <button
+                    onClick={addCard}
+                    className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-200"
+                >
                     Add New Task
                 </button>
             </div>
