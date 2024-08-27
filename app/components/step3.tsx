@@ -13,9 +13,12 @@ export default async function API() {
         let data: Post[] = [];
 
         // 絶対パスを使用
-        const response = await fetch(`${process.env.VERCEL_URL}/api/post`, {
-            method: "GET",
-        });
+        const response = await fetch(
+            `https://${process.env.VERCEL_URL}/api/post`,
+            {
+                method: "GET",
+            }
+        );
         data = await response.json();
         // dataから5つのデータを取得
         const slicedData = data.slice(0, 5);
