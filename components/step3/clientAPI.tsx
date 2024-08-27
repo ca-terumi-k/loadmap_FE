@@ -10,7 +10,7 @@ const Loading = () => (
 
 // データフェッチを行う関数
 const fetchPosts = async (): Promise<Post[]> => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/post`);
     if (!res.ok) {
         throw new Error("Network response was not ok");
     }

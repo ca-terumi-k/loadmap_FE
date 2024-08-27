@@ -12,7 +12,7 @@ export default function ProtectedPage() {
     const router = useRouter();
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user: User) => {
             if (user) {
                 setUser(user);
             } else {
