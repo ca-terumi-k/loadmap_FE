@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { auth } from "@/components/step5/firebase";
-import Navigation from "@/components/step4";
+import { auth } from "@/app/components/step5/firebase";
+import Navigation from "@/app/components/step4";
 
 export default function ProtectedPage() {
     const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ export default function ProtectedPage() {
     const router = useRouter();
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user: User) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             } else {

@@ -2,14 +2,20 @@ import { cache } from "react";
 
 const getTimestamp = cache(async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/date`, {
-            cache: "force-cache",
-        });
+        const res = await fetch(
+            `${
+                process.env.NEXT_PUBLIC_VERCEL_URL || "http://127.0.0.1:3000"
+            }/api/date`,
+            {
+                cache: "force-cache",
+            }
+        );
+
         if (!res.ok) throw new Error("Failed to fetch timestamp");
-        return res.json();
+        return await res.json();
     } catch (error) {
         console.error("Failed to fetch timestamp:", error);
-        return "Error fetching timestamp";
+        return { error: true, message: "Error fetching timestamp" };
     }
 });
 
@@ -27,7 +33,7 @@ export default async function SSG() {
             <p className="text-sm font-semibold">
                 buildTime at: <br />
                 <span className="text-lg">
-                    {timestamp.error ? "Failed to load timestamp" : timestamp}
+                    {timestamp.error ? timestamp.message : timestamp}
                 </span>
             </p>
         </div>

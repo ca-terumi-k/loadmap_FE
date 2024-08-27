@@ -6,17 +6,19 @@
 
 // app/api/post/route.tsを生成し、そこにデータを取得するAPIを作成してください。
 
-
 import React from "react";
-import { PostGrid, Post } from "@/components/step3/post";
-import PostCard from "@/components/step3/clientAPI";
+import { PostGrid, Post } from "@/app/components/step3/post";
+import PostCard from "@/app/components/step3/clientAPI";
 
 export default async function API() {
     const getFunc = async () => {
-        "use server";
+        ("use server");
         let data: Post[] = [];
+        // 相対パスを使用
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/post`
+            `${
+                process.env.NEXT_PUBLIC_VERCEL_URL || "http://127.0.0.1:3000"
+            }/api/post`
         );
         data = await response.json();
         // dataから5つのデータを取得

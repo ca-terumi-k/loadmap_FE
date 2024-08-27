@@ -7,7 +7,7 @@ import {
     provider,
     signInWithPopup,
     signOut,
-} from "@/components/step5/firebase";
+} from "@/app/components/step5/firebase";
 import Image from "next/image";
 import { User } from "firebase/auth";
 

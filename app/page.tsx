@@ -1,12 +1,12 @@
 import React from "react";
-import Counter from "@/components/step1";
-import Todo from "@/components/step2";
-import API from "@/components/step3";
-import Navigation from "@/components/step4";
-import Auth from "@/components/step5";
-import SSR_SSG_CSR from "@/components/step6";
-import Context from "@/components/step7";
-import Toast from "@/components/toast";
+import Counter from "@/app/components/step1";
+import Todo from "@/app/components/step2";
+import API from "@/app/components/step3";
+import Navigation from "@/app/components/step4";
+import Auth from "@/app/components/step5";
+import SSR_SSG_CSR from "@/app/components/step6";
+import Context from "@/app/components/step7";
+import Toast from "@/app/components/toast";
 
 // カードコンポーネント
 const Card = ({

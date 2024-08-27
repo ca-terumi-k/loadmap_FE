@@ -1,6 +1,6 @@
-import SSR from "@/components/step6/SSR";
-import SSG from "@/components/step6/SSG";
-import CSR from "@/components/step6/CSR";
+import SSR from "@/app/components/step6/SSR";
+import SSG from "@/app/components/step6/SSG";
+import CSR from "@/app/components/step6/CSR";
 
 import React from "react";
 

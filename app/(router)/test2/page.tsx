@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "@/components/step1";
+import Counter from "@/app/components/step1";
 
 // カードコンポーネント
 const Card = ({

@@ -1,6 +1,6 @@
 import React from "react";
-import Context from "@/components/step7";
-import Toast from "@/components/toast";
+import Context from "@/app/components/step7";
+import Toast from "@/app/components/toast";
 
 // カードコンポーネント
 const Card = ({

@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, use } from "react";
-import { PostGrid, Post } from "@/components/step3/post";
+import { PostGrid, Post } from "@/app/components/step3/post";
 
 const Loading = () => (
     <div className="container mx-auto px-4 py-8 flex justify-center items-center">
@@ -10,7 +10,11 @@ const Loading = () => (
 
 // データフェッチを行う関数
 const fetchPosts = async (): Promise<Post[]> => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/post`);
+    const res = await fetch(
+        `${
+            process.env.NEXT_PUBLIC_BASE_URL || "http://127.0.0.1:3000"
+        }/api/post`
+    );
     if (!res.ok) {
         throw new Error("Network response was not ok");
     }

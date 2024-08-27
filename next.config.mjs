@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        NEXT_PUBLIC_API_URL: process.env.VERCEL_URL,
+        NEXT_PUBLIC_BASE_URL: process.env.VERCEL_URL,
     },
     images: {
         remotePatterns: [
@@ -23,6 +23,9 @@ const nextConfig = {
             },
         ],
     },
+    basePath: "",
+    output: "standalone",
+    reactStrictMode: true,
 };
 
 export default nextConfig;

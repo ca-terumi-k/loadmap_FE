@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Card from "@/components/step2/card";
+import Card from "@/app/components/step2/card";
 
 type ListProps = {
     initialCards?: string[]; // initialCardsをオプショナルにする
